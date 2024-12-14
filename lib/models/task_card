@@ -1,0 +1,58 @@
+
+// ignore_for_file: prefer_const_constructors, file_names
+
+import 'package:flutter/material.dart';
+
+class TaskCard extends StatelessWidget {
+ final String taskName;
+ final String status;
+ final int percentage;
+ final String assignedBy;
+ final String date;
+
+ const TaskCard({
+   Key? key,
+   required this.taskName,
+   required this.status,
+   required this.percentage,
+   required this.assignedBy,
+   required this.date,
+ }) : super(key: key);
+
+ @override
+ Widget build(BuildContext context) {
+   return Card(
+     elevation: 4,
+     margin: EdgeInsets.symmetric(vertical: 8),
+     child: Padding(
+       padding: const EdgeInsets.all(16.0),
+       child: Column(
+         crossAxisAlignment: CrossAxisAlignment.start,
+         children: [
+           Text(
+             taskName,
+             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+           ),
+           SizedBox(height: 4),
+           Row(
+             children: [
+               Text('Status: $status'),
+               Spacer(),
+               Text('$percentage%'),
+             ],
+           ),
+           LinearProgressIndicator(
+             valueColor:  AlwaysStoppedAnimation(Colors.blue),
+             value: percentage / 100,
+             minHeight: 4,
+           ),
+           SizedBox(height: 8),
+           Text('Assigned By: $assignedBy'),
+           Text('Due Date: $date'),
+         ],
+       ),
+     ),
+   );
+ }
+}
+
