@@ -1,5 +1,6 @@
 import 'package:custom_calender_picker/custom_calender_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:taskio/main.dart';
 
@@ -18,7 +19,7 @@ class _AddTaskState extends State<AddTask> {
   // TextEditingController date = TextEditingController();
 
   // final dropDownKey = GlobalKey<DropdownSearchState>();
-
+  var developer;
   List<String> developers = <String>[
     'Rohith',
     'SreeLakshmi',
@@ -55,21 +56,22 @@ class _AddTaskState extends State<AddTask> {
                 Container(
                   width: width * 1,
                   height: height * 0.055,
-                  decoration: BoxDecoration(color: Colors.white, 
-                  borderRadius: BorderRadius.circular(height*0.01),
-                  boxShadow: [
-                    BoxShadow(color: greyclr, blurRadius: 4, spreadRadius: 2)
-                  ]),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(height * 0.01),
+                      boxShadow: [
+                        BoxShadow(
+                            color: greyclr, blurRadius: 4, spreadRadius: 2)
+                      ]),
                   child: TextFormField(
                     controller: taskName,
                     cursorColor: textClr,
                     style:
                         TextStyle(color: textClr, fontWeight: FontWeight.w500),
                     decoration: InputDecoration(
-                     disabledBorder: InputBorder.none,
+                      disabledBorder: InputBorder.none,
                       enabledBorder: InputBorder.none,
                       hintText: 'Task Name',
-                      
                       hintStyle: TextStyle(
                           color: textboxClr, fontWeight: FontWeight.w200),
                       prefixIcon: Icon(
@@ -87,17 +89,18 @@ class _AddTaskState extends State<AddTask> {
                 Container(
                   width: width * 1,
                   height: height * 0.055,
-                  decoration: BoxDecoration(color: Colors.white,
-                      borderRadius: BorderRadius.circular(height*0.01),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(height * 0.01),
                       boxShadow: [
-                        BoxShadow(color: greyclr, blurRadius: 4, spreadRadius: 2)
+                        BoxShadow(
+                            color: greyclr, blurRadius: 4, spreadRadius: 2)
                       ]),
                   child: TextFormField(
                     controller: taskDescription,
                     cursorColor: textboxClr,
-                    style: TextStyle(color: textClr, fontWeight: FontWeight.w500),
-                   
-                    
+                    style:
+                        TextStyle(color: textClr, fontWeight: FontWeight.w500),
                     decoration: InputDecoration(
                       hintText: 'Task About',
                       enabledBorder: InputBorder.none,
@@ -110,7 +113,7 @@ class _AddTaskState extends State<AddTask> {
                       fillColor: Colors.white,
                     ),
                   ),
-                ),// Task Description
+                ), // Task Description
 
                 SizedBox(
                   height: height * 0.02,
@@ -118,16 +121,17 @@ class _AddTaskState extends State<AddTask> {
                 Container(
                   width: width * 1,
                   height: height * 0.055,
-                  decoration: BoxDecoration(color: Colors.white,
-                      borderRadius: BorderRadius.circular(height*0.01),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(height * 0.01),
                       boxShadow: [
-                        BoxShadow(color: greyclr, blurRadius: 4, spreadRadius: 2)
+                        BoxShadow(
+                            color: greyclr, blurRadius: 4, spreadRadius: 2)
                       ]),
                   child: TextFormField(
                     cursorColor: textboxClr,
-                    style:
-                        TextStyle(color: textboxClr, fontWeight: FontWeight.w500),
-                   
+                    style: TextStyle(
+                        color: textboxClr, fontWeight: FontWeight.w500),
                     decoration: InputDecoration(
                       enabledBorder: InputBorder.none,
                       hintText: 'Target date',
@@ -188,17 +192,70 @@ class _AddTaskState extends State<AddTask> {
                       ),
                     ),
                   ),
-                ),//Task date from to To
+                ), //Task date from to To
                 SizedBox(
                   height: height * 0.02,
                 ),
+
+                Container(
+                    height: width * 0.12,
+                    width: width,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: const Color(0xffF6F6FF)),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 15, right: 15),
+                      child: DropdownButton(
+                        style: GoogleFonts.outfit(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
+                        underline: Container(),
+                        hint: Text('Assigned to',
+                            style: GoogleFonts.outfit(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: const Color(0xff615F5F),
+                            )),
+                        value: developer,
+                        dropdownColor: Colors.white,
+                        icon: const Icon(
+                          Icons.keyboard_arrow_down,
+                          color: Colors.black,
+                          size: 20,
+                        ),
+                        iconDisabledColor: const Color(0xff615F5F),
+                        items: developers.map((String items) {
+                          return DropdownMenuItem(
+                            value: items,
+                            child: Text(
+                              items,
+                              style: GoogleFonts.outfit(
+                                color: const Color(0xff615F5F),
+                              ),
+                            ),
+                          );
+                        }).toList(),
+                        onChanged: (var newValue) {
+                          print(developer);
+                          setState(() {
+                            developer = newValue;
+                            print(developer);
+                          });
+                        },
+                        isExpanded: true,
+                      ),
+                    )),
                 Container(
                   width: width * 1,
                   height: height * 0.055,
-                  decoration: BoxDecoration(color: Colors.white,
-                      borderRadius: BorderRadius.circular(height*0.01),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(height * 0.01),
                       boxShadow: [
-                        BoxShadow(color: greyclr, blurRadius: 4, spreadRadius: 2)
+                        BoxShadow(
+                            color: greyclr, blurRadius: 4, spreadRadius: 2)
                       ]),
                   child: Row(
                     children: [
@@ -238,17 +295,19 @@ class _AddTaskState extends State<AddTask> {
                       ),
                     ],
                   ),
-                ),//developer dropdown
+                ), //developer dropdown
                 SizedBox(
                   height: height * 0.02,
                 ),
                 Container(
                   width: width * 1,
                   height: height * 0.2,
-                  decoration: BoxDecoration(color: Colors.white,
-                      borderRadius: BorderRadius.circular(height*0.01),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(height * 0.01),
                       boxShadow: [
-                        BoxShadow(color: greyclr, blurRadius: 4, spreadRadius: 2)
+                        BoxShadow(
+                            color: greyclr, blurRadius: 4, spreadRadius: 2)
                       ]),
                   child: Column(
                     children: [
@@ -268,7 +327,9 @@ class _AddTaskState extends State<AddTask> {
                             'Task UI',
                             style: TextStyle(color: textboxClr),
                           ),
-                          Divider(thickness: 1,),
+                          Divider(
+                            thickness: 1,
+                          ),
                         ],
                       ),
                       SizedBox(
@@ -305,7 +366,7 @@ class _AddTaskState extends State<AddTask> {
                       ),
                     ],
                   ),
-                ),  //task UI upload section
+                ), //task UI upload section
 
                 SizedBox(
                   height: height * 0.02,
@@ -331,7 +392,7 @@ class _AddTaskState extends State<AddTask> {
                       ),
                     ),
                   ],
-                ),// button
+                ), // button
               ],
             ),
           ),

@@ -18,7 +18,7 @@ class Texts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: GoogleFonts.lato(
+      style: GoogleFonts.openSans(
         color: color,
         fontSize: fonstsize,
         fontWeight: fontWeight,

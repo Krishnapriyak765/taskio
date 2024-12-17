@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:taskio/main.dart';
 import 'package:taskio/utils/colors.dart';
 import 'package:taskio/widgets/background_image.dart';
+import 'package:taskio/widgets/button.dart';
 import 'package:taskio/widgets/logintextfield.dart';
 import 'package:taskio/widgets/logo.dart';
 import 'package:taskio/widgets/sizedBox.dart';
@@ -71,28 +72,42 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           SizedBox(height: height * 0.05),
                           TextFields(
-                              labeltxt: 'Name',
+                              icon: Icon(
+                                Icons.person,
+                                color: AppColor.textfieldbordercolor,
+                              ),
+                              labeltxt: 'User',
                               textcontroller: _usernameController),
                           const SizedBoxs(),
                           TextFields(
+                              icon: Icon(
+                                Icons.lock,
+                                color: AppColor.textfieldbordercolor,
+                              ),
                               labeltxt: 'Password',
                               textcontroller: _passwordController),
                           const SizedBoxs(),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              // Buttons(text: 'SIGNUP')
-                              ElevatedButton(
-                                onPressed: () {
-                                  Navigator.of(context).pushNamed('bottomNav');
-                                },
-                                child: const Text(
-                                  'LOGIN',
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ),
-                            ],
+                          Buttons(
+                            text: 'LOGIN',
+                            onTapto: () {
+                              Navigator.of(context).pushNamed('bottomNav');
+                            },
                           ),
+                          // Row(
+                          //   mainAxisAlignment: MainAxisAlignment.center,
+                          //   children: [
+                          //     // Buttons(text: 'SIGNUP')
+                          //     ElevatedButton(
+                          //       onPressed: () {
+                          //         Navigator.of(context).pushNamed('bottomNav');
+                          //       },
+                          //       child: const Text(
+                          //         'LOGIN',
+                          //         style: TextStyle(color: Colors.white),
+                          //       ),
+                          //     ),
+                          //   ],
+                          // ),
                           SizedBox(
                             height: height * 0.01,
                           ),
@@ -128,7 +143,9 @@ class _LoginPageState extends State<LoginPage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              SocialMediaLogin(url: 'https://www.google.com/login/', image: "assets/google1.png"),
+                              SocialMediaLogin(
+                                  url: 'https://www.google.com/login/',
+                                  image: "assets/google1.png"),
                               SizedBox(width: 20), // Space between icons
                               GestureDetector(
                                 onTap: () async {

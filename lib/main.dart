@@ -10,7 +10,7 @@ import 'package:taskio/screens/splash_screen.dart';
 import 'package:taskio/screens/task_details.dart';
 import 'package:taskio/screens/task_updation.dart';
 
-var  height;
+var height;
 var width;
 
 Color textClr = const Color(0xff4978BA);
@@ -35,44 +35,44 @@ class _MyAppState extends State<MyApp> {
     width = MediaQuery.of(context).size.width;
 
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: SplashScreen(),
-        theme: ThemeData(
-            elevatedButtonTheme: ElevatedButtonThemeData(
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: textClr,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  minimumSize: const Size(150, 40)),
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen(),
+      theme: ThemeData(
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+                backgroundColor: textClr,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                minimumSize: const Size(150, 40)),
+          ),
+          inputDecorationTheme: InputDecorationTheme(
+            floatingLabelStyle: TextStyle(color: textClr),
+            labelStyle: TextStyle(color: textClr, fontSize: 18),
+            contentPadding: const EdgeInsets.only(
+              left: 30,
             ),
-            inputDecorationTheme: InputDecorationTheme(
-              floatingLabelStyle: TextStyle(color: textClr),
-              labelStyle: TextStyle(color: textClr, fontSize: 18),
-              contentPadding: const EdgeInsets.only(
-                left: 30,
-              ),
-              border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide()),
-              enabledBorder:
-                  OutlineInputBorder(borderSide: BorderSide(color: textClr)),
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: textClr),
-              ),
-            )),
-            routes: {
-              'addtask':(context) => AddTask(),
-              'taskdetails':(context) => taskdetails(),
-              'bottomNav':(context) => BottomNavigation(),
-              'profileEdit':(context) => ProfileEdit(),
-              'splash':(context) => SplashScreen(),
-              'login':(context) => LoginPage(),
-              'home':(context) =>  HomePage(),
-              'taskupdation':(context) => TaskUpdation(taskName: ''),
-              'signup':(context) => SignUp(),
-              'account':(context) => Account(),
-            },
-            );
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: const BorderSide()),
+            enabledBorder:
+                OutlineInputBorder(borderSide: BorderSide(color: textClr)),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: textClr),
+            ),
+          )),
+      routes: {
+        'addtask': (context) => AddTask(),
+        'taskdetails': (context) => taskdetails(),
+        'bottomNav': (context) => BottomNavigation(),
+        'profileEdit': (context) => ProfileEdit(),
+        'splash': (context) => SplashScreen(),
+        'login': (context) => LoginPage(),
+        'home': (context) => HomePage(),
+        'taskupdation': (context) => TaskUpdation(taskName: ''),
+        'signup': (context) => SignUp(),
+        'account': (context) => Account(),
+      },
+    );
   }
 }

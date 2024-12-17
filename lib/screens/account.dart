@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskio/widgets/button.dart';
 
 import '../main.dart';
 
@@ -23,7 +24,7 @@ class _AccountState extends State<Account> {
         title: Text('Profile'),
       ),
       body: Padding(
-        padding:  EdgeInsets.all(height*0.03),
+        padding: EdgeInsets.all(height * 0.03),
         child: Column(
           children: [
             CircleAvatar(
@@ -70,18 +71,20 @@ class _AccountState extends State<Account> {
                   Text(
                     'Profile Edit',
                     style: TextStyle(
-                        fontWeight: FontWeight.w500, fontSize: height * 0.02,color: textClr),
+                        fontWeight: FontWeight.w500,
+                        fontSize: height * 0.02,
+                        color: textClr),
                   ),
                   SizedBox(
                     width: width * 0.4,
                   ),
-                   InkWell(
+                  InkWell(
                     onTap: () => Navigator.of(context).pushNamed('profileEdit'),
-                     child: Icon(
+                    child: Icon(
                       Icons.arrow_forward_ios_rounded,
-                       color: textboxClr,
-                                       ),
-                   ),
+                      color: textboxClr,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -111,45 +114,30 @@ class _AccountState extends State<Account> {
                   Text(
                     'Task Assigned',
                     style: TextStyle(
-                        fontWeight: FontWeight.w500, fontSize: height * 0.02,color: textClr),
+                        fontWeight: FontWeight.w500,
+                        fontSize: height * 0.02,
+                        color: textClr),
                   ),
                   SizedBox(
                     width: width * 0.35,
                   ),
-                   InkWell(
+                  InkWell(
                     onTap: () => Navigator.of(context).pushNamed('profileEdit'),
-                     child: Icon(
+                    child: Icon(
                       Icons.arrow_forward_ios_rounded,
                       color: textboxClr,
-                                       ),
-                   ),
+                    ),
+                  ),
                 ],
               ),
             ),
             SizedBox(
               height: height * 0.22,
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                height: height * 0.05,
-                width: width * 0.7,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: textClr,
-                ),
-                child: InkWell(
-                  onTap: () {},
-                  //  Navigator.of(context).pushNamed('taskdetails'),
-                  child: Center(
-                      child: const Text(
-                    'Logout',
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.w400),
-                  )),
-                ),
-              ),
-            ),
+            Buttons(
+              text: 'LogOut',
+              onTapto: () {},
+            )
           ],
         ),
       ),

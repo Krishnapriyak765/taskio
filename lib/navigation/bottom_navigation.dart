@@ -4,6 +4,7 @@ import 'package:taskio/screens/add_task.dart';
 import 'package:taskio/screens/home.dart';
 import 'package:taskio/screens/account.dart';
 import 'package:taskio/screens/task_updation.dart';
+import 'package:taskio/utils/colors.dart';
 
 import '../main.dart';
 
@@ -45,16 +46,28 @@ class _BottomNavigationState extends State<BottomNavigation> {
       // ),
 
       bottomNavigationBar: CurvedNavigationBar(
-        height: height*0.055,
+        height: height * 0.055,
         key: _curvednavigationkey,
         items: [
-          Icon(Icons.home,color: textClr,),
-          Icon(Icons.add,color: textClr,),
-          Icon(Icons.update,color: textClr,),
-           Icon(Icons.person,color: textClr,),
+          Icon(
+            Icons.home,
+            color: textClr,
+          ),
+          Icon(
+            Icons.add,
+            color: textClr,
+          ),
+          Icon(
+            Icons.update,
+            color: textClr,
+          ),
+          Icon(
+            Icons.person,
+            color: textClr,
+          ),
         ],
         backgroundColor: textClr,
-        buttonBackgroundColor: Colors.white,
+        buttonBackgroundColor: AppColor.white,
         animationCurve: Curves.easeInOut,
         animationDuration: Duration(milliseconds: 600),
         onTap: (index) => setState(

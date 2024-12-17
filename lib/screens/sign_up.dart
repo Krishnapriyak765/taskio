@@ -3,6 +3,7 @@ import 'package:taskio/main.dart';
 import 'package:taskio/utils/colors.dart';
 import 'package:taskio/widgets/SizedBox.dart';
 import 'package:taskio/widgets/background_image.dart';
+import 'package:taskio/widgets/button.dart';
 import 'package:taskio/widgets/logintextfield.dart';
 import 'package:taskio/widgets/logo.dart';
 import 'package:taskio/widgets/text.dart';
@@ -59,32 +60,41 @@ class SignUp extends StatelessWidget {
                           ),
                           SizedBox(height: height * 0.05),
                           TextFields(
-                              labeltxt: 'Name', textcontroller: textName),
+                              icon: Icon(
+                                Icons.person,
+                                color: AppColor.textfieldbordercolor,
+                              ),
+                              labeltxt: 'Name',
+                              textcontroller: textName),
                           const SizedBoxs(),
                           TextFields(
-                              labeltxt: 'Email', textcontroller: textEmail),
+                              icon: Icon(
+                                Icons.email,
+                                color: AppColor.textfieldbordercolor,
+                              ),
+                              labeltxt: 'Email',
+                              textcontroller: textEmail),
                           const SizedBoxs(),
                           TextFields(
-                              labeltxt: 'Password', textcontroller: textPswd),
+                              icon: Icon(
+                                Icons.lock,
+                                color: AppColor.textfieldbordercolor,
+                              ),
+                              labeltxt: 'Password',
+                              textcontroller: textPswd),
                           const SizedBoxs(),
                           TextFields(
+                              icon: Icon(
+                                Icons.code,
+                                color: AppColor.textfieldbordercolor,
+                              ),
                               labeltxt: 'ReferalCode',
                               textcontroller: textReferralCode),
                           const SizedBoxs(),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              // Buttons(text: 'SIGNUP')
-                              ElevatedButton(
-                                onPressed: () {
-                                  Navigator.of(context).pushNamed('bottomNav');
-                                },
-                                child: const Text(
-                                  'SIGN UP',
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ),
-                            ],
+                          Buttons(
+                            text: 'SIGN UP',
+                            onTapto: () =>
+                                Navigator.of(context).pushNamed('bottomNav'),
                           ),
                           SizedBox(
                             height: height * 0.01,
