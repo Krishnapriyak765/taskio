@@ -1,9 +1,6 @@
-import 'dart:io';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:taskio/functions/imgpicker_camera.dart';
 import 'package:taskio/utils/colors.dart';
 import 'package:taskio/widgets/button.dart';
@@ -30,7 +27,7 @@ class _ProfileEditState extends State<ProfileEdit> {
     return Scaffold(
       // backgroundColor:   textClr,
       appBar: AppBar(
-        backgroundColor: textClr,
+        backgroundColor: AppColor.textfieldbordercolor,
         title: Text(
           'Profile Edit',
           style: TextStyle(color: Colors.white),
@@ -111,7 +108,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                         child: Stack(
                           children: [
                             CircleAvatar(
-                              backgroundColor: greyclr,
+                              backgroundColor: AppColor.textboxClr,
                               radius: height * 0.08,
                               backgroundImage: AssetImage('assets/girl.jpg'),
                             ),
@@ -229,7 +226,6 @@ class _ProfileEditState extends State<ProfileEdit> {
               TextformInside(
                 tcontroller: username,
                 hintText: 'User Name',
-                labelText: 'Name',
                 icons: Icon(
                   Icons.person,
                   color: AppColor.textfieldbordercolor,
@@ -240,7 +236,7 @@ class _ProfileEditState extends State<ProfileEdit> {
               TextformInside(
                 tcontroller: useremail,
                 hintText: 'User Email',
-                labelText: 'email',
+               
                 icons: Icon(
                   Icons.email,
                   color: AppColor.textfieldbordercolor,
@@ -250,8 +246,7 @@ class _ProfileEditState extends State<ProfileEdit> {
               SizedBoxs(),
               TextformInside(
                 tcontroller: userphone,
-                hintText: 'user Phone',
-                labelText: 'Phone',
+                hintText: 'user Phone', 
                 icons: Icon(
                   Icons.phone,
                   color: AppColor.textfieldbordercolor,

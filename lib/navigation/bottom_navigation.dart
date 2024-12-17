@@ -1,8 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:taskio/screens/account.dart';
 import 'package:taskio/screens/add_task.dart';
 import 'package:taskio/screens/home.dart';
-import 'package:taskio/screens/account.dart';
 import 'package:taskio/screens/task_updation.dart';
 import 'package:taskio/utils/colors.dart';
 
@@ -51,22 +51,22 @@ class _BottomNavigationState extends State<BottomNavigation> {
         items: [
           Icon(
             Icons.home,
-            color: textClr,
+            color: AppColor.textfieldbordercolor,
           ),
           Icon(
             Icons.add,
-            color: textClr,
+            color: AppColor.textfieldbordercolor,
           ),
           Icon(
             Icons.update,
-            color: textClr,
+            color: AppColor.textfieldbordercolor,
           ),
           Icon(
             Icons.person,
-            color: textClr,
+            color: AppColor.textfieldbordercolor,
           ),
         ],
-        backgroundColor: textClr,
+        backgroundColor: AppColor.textfieldbordercolor,
         buttonBackgroundColor: AppColor.white,
         animationCurve: Curves.easeInOut,
         animationDuration: Duration(milliseconds: 600),

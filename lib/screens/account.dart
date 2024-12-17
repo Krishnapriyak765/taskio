@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskio/utils/colors.dart';
 import 'package:taskio/widgets/button.dart';
 
 import '../main.dart';
@@ -20,7 +21,7 @@ class _AccountState extends State<Account> {
     return Scaffold(
       backgroundColor: Colors.white30,
       appBar: AppBar(
-        backgroundColor: textClr,
+        backgroundColor: AppColor.textfieldbordercolor,
         title: Text('Profile'),
       ),
       body: Padding(
@@ -28,7 +29,7 @@ class _AccountState extends State<Account> {
         child: Column(
           children: [
             CircleAvatar(
-              backgroundColor: greyclr,
+              backgroundColor: AppColor.textboxClr,
               radius: height * 0.1,
               backgroundImage: AssetImage('assets/girl.jpg'),
             ),
@@ -54,7 +55,7 @@ class _AccountState extends State<Account> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
-                    BoxShadow(color: greyclr, blurRadius: 4, spreadRadius: 2)
+                    BoxShadow(color: AppColor.textboxClr, blurRadius: 4, spreadRadius: 2)
                   ]),
               child: Row(
                 children: [
@@ -63,7 +64,7 @@ class _AccountState extends State<Account> {
                   ),
                   Icon(
                     Icons.person,
-                    color: greyclr,
+                    color: AppColor.textboxClr,
                   ),
                   SizedBox(
                     width: width * 0.03,
@@ -73,7 +74,7 @@ class _AccountState extends State<Account> {
                     style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: height * 0.02,
-                        color: textClr),
+                        color: AppColor.textfieldbordercolor),
                   ),
                   SizedBox(
                     width: width * 0.4,
@@ -82,7 +83,7 @@ class _AccountState extends State<Account> {
                     onTap: () => Navigator.of(context).pushNamed('profileEdit'),
                     child: Icon(
                       Icons.arrow_forward_ios_rounded,
-                      color: textboxClr,
+                      color: AppColor.textboxClr,
                     ),
                   ),
                 ],
@@ -97,7 +98,7 @@ class _AccountState extends State<Account> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
-                    BoxShadow(color: greyclr, blurRadius: 4, spreadRadius: 2)
+                    BoxShadow(color: AppColor.textboxClr, blurRadius: 4, spreadRadius: 2)
                   ]),
               child: Row(
                 children: [
@@ -106,7 +107,7 @@ class _AccountState extends State<Account> {
                   ),
                   Icon(
                     Icons.person,
-                    color: greyclr,
+                    color: AppColor.textboxClr,
                   ),
                   SizedBox(
                     width: width * 0.03,
@@ -116,7 +117,7 @@ class _AccountState extends State<Account> {
                     style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: height * 0.02,
-                        color: textClr),
+                        color: AppColor.textboxClr),
                   ),
                   SizedBox(
                     width: width * 0.35,
@@ -125,7 +126,7 @@ class _AccountState extends State<Account> {
                     onTap: () => Navigator.of(context).pushNamed('profileEdit'),
                     child: Icon(
                       Icons.arrow_forward_ios_rounded,
-                      color: textboxClr,
+                      color: AppColor.textboxClr,
                     ),
                   ),
                 ],

@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, avoid_print, prefer_const_constructors_in_immutables, unused_local_variable
 
 import 'package:flutter/material.dart';
-import 'package:taskio/main.dart';
+import 'package:taskio/utils/colors.dart';
 
 class TaskUpdation extends StatefulWidget {
  final String taskName;
@@ -33,7 +33,7 @@ class _TaskUpdationState extends State<TaskUpdation> {
      child: Scaffold(
       
        appBar: AppBar(
-         backgroundColor: textClr,
+         backgroundColor: AppColor.textfieldbordercolor,
          title: Text('Task Updation'),
        ),
        body: Container(

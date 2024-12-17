@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskio/main.dart';
+import 'package:taskio/utils/colors.dart';
 
 class Buttons extends StatelessWidget {
   final String text;
@@ -16,7 +17,7 @@ class Buttons extends StatelessWidget {
         width: width * 0.5,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
-          color: textClr,
+          color: AppColor.textfieldbordercolor,
           boxShadow: [
             BoxShadow(
               color: Color(0xff000000).withOpacity(0.15),

@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:taskio/main.dart';
-import 'package:taskio/models/task_card';
 import 'package:taskio/utils/colors.dart';
 import 'package:taskio/widgets/card_home.dart';
 import 'package:taskio/widgets/text.dart';
@@ -24,12 +23,14 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Row(
               children: [
-                Icon(Icons.person, color: AppColor.white),
+                                    CircleAvatar(radius: height*0.02,foregroundImage:AssetImage('assets/girl.jpg'),),
+
+                // Icon(Icons.person, color: AppColor.white),
                 SizedBox(width: 10),
                 Texts(
-                    text: 'User Name ',
+                    text: 'Krishnapriya K ',
                     fonstsize: height * 0.02,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w500,
                     color: AppColor.white),
               ],
             ),
@@ -95,6 +96,7 @@ class HomePage extends StatelessWidget {
                     return GestureDetector(
                       onTap: () {
                         Navigator.of(context).pushNamed('taskdetails');
+                        
                       },
                       child: CardHome(
                         title: 'Task $index',
