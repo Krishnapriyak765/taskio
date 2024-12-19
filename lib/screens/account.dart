@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:taskio/utils/colors.dart';
 import 'package:taskio/widgets/button.dart';
+import 'package:taskio/widgets/sizedBox.dart';
+import 'package:taskio/widgets/text.dart';
 
 import '../main.dart';
 
@@ -12,6 +14,8 @@ class Account extends StatefulWidget {
 }
 
 class _AccountState extends State<Account> {
+
+  List tasksStatus = ['Completed','Pending','Overdue','All Tasks'];
   TextEditingController username = TextEditingController();
   TextEditingController useremail = TextEditingController();
   TextEditingController userphone = TextEditingController();
@@ -22,125 +26,101 @@ class _AccountState extends State<Account> {
       backgroundColor: Colors.white30,
       appBar: AppBar(
         backgroundColor: AppColor.textfieldbordercolor,
-        title: Text('Profile'),
+        title: Texts(
+            text: 'Profile',
+            fonstsize: height * 0.025,
+            fontWeight: FontWeight.w400,
+            color: AppColor.white),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(height * 0.03),
-        child: Column(
-          children: [
-            CircleAvatar(
-              backgroundColor: AppColor.textboxClr,
-              radius: height * 0.1,
-              backgroundImage: AssetImage('assets/girl.jpg'),
-            ),
-            SizedBox(
-              height: height * 0.02,
-            ),
-            Container(
-              child: Text('User Name'.toUpperCase(),
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600, fontSize: height * 0.03)),
-            ),
-            Container(
-              child: Text('FLUTTER DEVELOPER',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w400, fontSize: height * 0.012)),
-            ),
-            SizedBox(
-              height: height * 0.03,
-            ),
-            Container(
-              height: height * 0.055,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(color: AppColor.textboxClr, blurRadius: 4, spreadRadius: 2)
-                  ]),
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: width * 0.03,
-                  ),
-                  Icon(
-                    Icons.person,
-                    color: AppColor.textboxClr,
-                  ),
-                  SizedBox(
-                    width: width * 0.03,
-                  ),
-                  Text(
-                    'Profile Edit',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: height * 0.02,
-                        color: AppColor.textfieldbordercolor),
-                  ),
-                  SizedBox(
-                    width: width * 0.4,
-                  ),
-                  InkWell(
-                    onTap: () => Navigator.of(context).pushNamed('profileEdit'),
-                    child: Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: AppColor.textboxClr,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Padding(
+            padding: EdgeInsets.all(height * 0.03),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: AppColor.textboxClr,
+                      radius: height * 0.08,
+                      backgroundImage: AssetImage('assets/girl.jpg'),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: height * 0.02,
-            ),
-            Container(
-              height: height * 0.055,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(color: AppColor.textboxClr, blurRadius: 4, spreadRadius: 2)
-                  ]),
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: width * 0.03,
-                  ),
-                  Icon(
-                    Icons.person,
-                    color: AppColor.textboxClr,
-                  ),
-                  SizedBox(
-                    width: width * 0.03,
-                  ),
-                  Text(
-                    'Task Assigned',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: height * 0.02,
-                        color: AppColor.textboxClr),
-                  ),
-                  SizedBox(
-                    width: width * 0.35,
-                  ),
-                  InkWell(
-                    onTap: () => Navigator.of(context).pushNamed('profileEdit'),
-                    child: Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: AppColor.textboxClr,
+                    SizedBox(
+                      width: width * 0.03,
                     ),
-                  ),
-                ],
-              ),
+                    Column(
+                      children: [
+                        Container(
+                          child: Text('User Name'.toUpperCase(),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: height * 0.03)),
+                        ),
+                        Container(
+                          child: Text('FLUTTER DEVELOPER',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: height * 0.012)),
+                        ),
+                        InkWell(
+                          onTap: ()=>Navigator.of(context).pushNamed('profileEdit'),
+                          child: Icon(Icons.edit))
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBoxs(),
+                Divider(),
+               SizedBoxs(),
+                Texts(
+                    text: 'My Tasks',
+                    fonstsize: height * 0.022,
+                    fontWeight: FontWeight.w600,
+                    color: AppColor.black),
+                SizedBox(
+                  height: height * 0.015,
+                ),
+                Container(
+                  height: height * 0.39,
+                  width: width * 5,
+                  // color: AppColor.greyclr,
+                  child: GridView.builder(
+                      itemCount: tasksStatus.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2),
+                      itemBuilder: (BuildContext context, int index) {
+                        return Padding(
+                          padding: const EdgeInsets.all(9.0),
+                          child: Container(
+                            height: height * 0.015,
+                            width: width * 0.3,
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.circular(height * 0.01),
+                              color: AppColor.bgdblue,
+                            ),
+                            child: Texts(
+                                text: tasksStatus[0],
+                                fonstsize: height * 0.015,
+                                fontWeight: FontWeight.w500,
+                                color: AppColor.textfieldbordercolor),
+                          ),
+                        );
+                      }),
+                ),
+              ],
             ),
-            SizedBox(
-              height: height * 0.22,
-            ),
-            Buttons(
-              text: 'LogOut',
-              onTapto: () {},
-            )
-          ],
-        ),
+          ),
+          Buttons(
+            text: 'LogOut',
+            onTapto: () {},
+          ),
+          SizedBox(
+            height: height * 0.01,
+          ),
+        ],
       ),
     );
   }

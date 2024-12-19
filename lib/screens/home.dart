@@ -17,21 +17,24 @@ class HomePage extends StatelessWidget {
             icon: Icon(Icons.menu, color: AppColor.white),
             onPressed: () => Scaffold.of(context).openDrawer(),
           ),
-        ),
+        ),title: Texts(
+                    text: 'Krishnapriya K ',
+                    fonstsize: height * 0.02,
+                    fontWeight: FontWeight.w500,
+                    color: AppColor.white) ,
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
               children: [
-                                    CircleAvatar(radius: height*0.02,foregroundImage:AssetImage('assets/girl.jpg'),),
+                CircleAvatar(
+                  radius: height * 0.02,
+                  foregroundImage: AssetImage('assets/girl.jpg'),
+                ),
 
                 // Icon(Icons.person, color: AppColor.white),
                 SizedBox(width: 10),
-                Texts(
-                    text: 'Krishnapriya K ',
-                    fonstsize: height * 0.02,
-                    fontWeight: FontWeight.w500,
-                    color: AppColor.white),
+                
               ],
             ),
           ),
@@ -96,7 +99,6 @@ class HomePage extends StatelessWidget {
                     return GestureDetector(
                       onTap: () {
                         Navigator.of(context).pushNamed('taskdetails');
-                        
                       },
                       child: CardHome(
                         title: 'Task $index',

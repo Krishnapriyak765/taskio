@@ -14,7 +14,7 @@ class Buttons extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       child: Container(
         height: height * 0.05,
-        width: width * 0.5,
+        width: width * 0.75,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           color: AppColor.textfieldbordercolor,
@@ -35,8 +35,8 @@ class Buttons extends StatelessWidget {
           child: Center(
             child: Text(
               text,
-              style: GoogleFonts.outfit(
-                  color: Colors.white, fontWeight: FontWeight.w600),
+              style: GoogleFonts.ptSans(
+                  color: Colors.white, fontWeight: FontWeight.w600,fontSize:height*0.02),
             ),
           ),
         ),

@@ -3,7 +3,7 @@ import 'package:taskio/main.dart';
 import 'package:taskio/utils/colors.dart';
 import 'package:taskio/widgets/SizedBox.dart';
 import 'package:taskio/widgets/background_image.dart';
-import 'package:taskio/widgets/button.dart';
+import 'package:taskio/widgets/login_button.dart';
 import 'package:taskio/widgets/logintextfield.dart';
 import 'package:taskio/widgets/logo.dart';
 import 'package:taskio/widgets/text.dart';
@@ -91,7 +91,7 @@ class SignUp extends StatelessWidget {
                               labeltxt: 'ReferalCode',
                               textcontroller: textReferralCode),
                           const SizedBoxs(),
-                          Buttons(
+                          LoginButtons(
                             text: 'SIGN UP',
                             onTapto: () =>
                                 Navigator.of(context).pushNamed('bottomNav'),

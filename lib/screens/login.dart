@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:taskio/main.dart';
 import 'package:taskio/utils/colors.dart';
 import 'package:taskio/widgets/background_image.dart';
-import 'package:taskio/widgets/button.dart';
+import 'package:taskio/widgets/login_button.dart';
 import 'package:taskio/widgets/logintextfield.dart';
 import 'package:taskio/widgets/logo.dart';
 import 'package:taskio/widgets/sizedBox.dart';
@@ -87,11 +87,10 @@ class _LoginPageState extends State<LoginPage> {
                               labeltxt: 'Password',
                               textcontroller: _passwordController),
                           const SizedBoxs(),
-                          Buttons(
+                          LoginButtons(
                             text: 'LOGIN',
-                            onTapto: () {
-                              Navigator.of(context).pushNamed('bottomNav');
-                            },
+                            onTapto: () =>
+                                Navigator.of(context).pushNamed('bottomNav'),
                           ),
                           // Row(
                           //   mainAxisAlignment: MainAxisAlignment.center,

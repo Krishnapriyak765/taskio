@@ -125,7 +125,7 @@ class _TaskDetailsState extends State<TaskDetails> {
 
             SizedBoxs(),
 
-            Card(color: AppColor.greyclr,
+            Card(color: AppColor.bgdblue,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
               elevation: 5,
@@ -143,19 +143,24 @@ class _TaskDetailsState extends State<TaskDetails> {
                       fonstsize: height * 0.015,
                       fontWeight: FontWeight.w500, color: AppColor.greyclr,
                       ),
+                       SizedBox(height: height*0.015,),
                     Container(
                       height: height * 0.2,
                       width: width * 1,
-                      child: const Text(
-                        'Lorem Ipsum Deceit Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, adipisci velit. Neque porro quisquam est qui dolorem ipsum quia sit amet, consectetur, adipisci velit.',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(letterSpacing: 1),
+                      child: SingleChildScrollView(
+                        child: const Text(
+                          'Lorem Ipsum Deceit Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, adipisci velit. Neque porro quisquam est qui dolorem ipsum quia sit amet, consectetur, adipisci velit.Lorem Ipsum Deceit Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, adipisci velit. Neque porro quisquam est qui dolorem ipsum quia sit amet, consectetur, adipisci velit',
+                          textAlign: TextAlign.left,
+                          style: TextStyle(letterSpacing: 1),
+                        ),
                       ),
                     ),
+                    SizedBox(height: height*0.02,),
                     RichText(
                         text: TextSpan(
                             children: [
                           TextSpan(
+                            
                               text: '  Date :  ',
                               style:
                                   GoogleFonts.ptSans(color: AppColor.greyclr)),
@@ -167,8 +172,8 @@ class _TaskDetailsState extends State<TaskDetails> {
                                 fontSize: height * 0.015,
                                 fontWeight: FontWeight.w500,
                                 color: AppColor.black))),
-                    SizedBox(
-                      height: height * 0.05,
+                    SizedBoxs(
+                      
                     ),
                   ],
                 ),
