@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:taskio/main.dart';
-import 'package:taskio/models/task_card';
 import 'package:taskio/utils/colors.dart';
 import 'package:taskio/widgets/card_home.dart';
 import 'package:taskio/widgets/text.dart';
@@ -12,25 +11,30 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff27528E),
+        backgroundColor: AppColor.appbar,
         leading: Builder(
           builder: (context) => IconButton(
             icon: Icon(Icons.menu, color: AppColor.white),
             onPressed: () => Scaffold.of(context).openDrawer(),
           ),
-        ),
+        ),title: Texts(
+                    text: 'Krishnapriya K ',
+                    fonstsize: height * 0.02,
+                    fontWeight: FontWeight.w500,
+                    color: AppColor.white) ,
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
               children: [
-                Icon(Icons.person, color: AppColor.white),
+                CircleAvatar(
+                  radius: height * 0.02,
+                  foregroundImage: AssetImage('assets/girl.jpg'),
+                ),
+
+                // Icon(Icons.person, color: AppColor.white),
                 SizedBox(width: 10),
-                Texts(
-                    text: 'User Name ',
-                    fonstsize: height * 0.02,
-                    fontWeight: FontWeight.w400,
-                    color: AppColor.white),
+                
               ],
             ),
           ),

@@ -3,7 +3,7 @@ import 'package:taskio/main.dart';
 import 'package:taskio/utils/colors.dart';
 import 'package:taskio/widgets/SizedBox.dart';
 import 'package:taskio/widgets/background_image.dart';
-import 'package:taskio/widgets/button.dart';
+import 'package:taskio/widgets/login_button.dart';
 import 'package:taskio/widgets/logintextfield.dart';
 import 'package:taskio/widgets/logo.dart';
 import 'package:taskio/widgets/text.dart';
@@ -14,7 +14,7 @@ class SignUp extends StatelessWidget {
   TextEditingController textName = TextEditingController();
   TextEditingController textEmail = TextEditingController();
   TextEditingController textPswd = TextEditingController();
-  TextEditingController textReferralCode = TextEditingController();
+  TextEditingController textPhone = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +55,7 @@ class SignUp extends StatelessWidget {
                                   text: 'SIGN UP',
                                   fonstsize: height * 0.03,
                                   fontWeight: FontWeight.bold,
-                                  color: AppColor.textfieldbordercolor)
+                                  color: AppColor.textfieldbordercolor),
                             ],
                           ),
                           SizedBox(height: height * 0.05),
@@ -84,15 +84,14 @@ class SignUp extends StatelessWidget {
                               textcontroller: textPswd),
                           const SizedBoxs(),
                           TextFields(
-                            icon: Icon(
-                              Icons.code,
-                              color: AppColor.textfieldbordercolor,
-                            ),
-                            labeltxt: 'ReferalCode',
-                            textcontroller: textReferralCode,
-                          ),
+                              icon: Icon(
+                                Icons.phone,
+                                color: AppColor.textfieldbordercolor,
+                              ),
+                              labeltxt: 'Phone',
+                              textcontroller: textPhone),
                           const SizedBoxs(),
-                          Buttons(
+                          LoginButtons(
                             text: 'SIGN UP',
                             onTapto: () =>
                                 Navigator.of(context).pushNamed('bottomNav'),

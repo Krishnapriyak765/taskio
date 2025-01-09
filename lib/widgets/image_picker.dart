@@ -83,7 +83,7 @@ class Imageupload extends StatelessWidget {
               child: Stack(
                 children: [
                   CircleAvatar(
-                    backgroundColor: greyclr,
+                    backgroundColor: AppColor.greyclr,
                     radius: height * 0.08,
                     backgroundImage: AssetImage('assets/girl.jpg'),
                   ),

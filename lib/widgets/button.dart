@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskio/main.dart';
+import 'package:taskio/utils/colors.dart';
 
 class Buttons extends StatelessWidget {
   final String text;
@@ -13,10 +14,10 @@ class Buttons extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       child: Container(
         height: height * 0.05,
-        width: width * 0.5,
+        width: width * 0.75,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
-          color: textClr,
+          color: AppColor.textfieldbordercolor,
           boxShadow: [
             BoxShadow(
               color: Color(0xff000000).withOpacity(0.15),
@@ -34,8 +35,8 @@ class Buttons extends StatelessWidget {
           child: Center(
             child: Text(
               text,
-              style: GoogleFonts.outfit(
-                  color: Colors.white, fontWeight: FontWeight.w600),
+              style: GoogleFonts.ptSans(
+                  color: Colors.white, fontWeight: FontWeight.w600,fontSize:height*0.02),
             ),
           ),
         ),

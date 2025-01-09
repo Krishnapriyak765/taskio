@@ -11,6 +11,7 @@ import 'package:taskio/screens/sign_up.dart';
 import 'package:taskio/screens/splash_screen.dart';
 import 'package:taskio/screens/task_details.dart';
 import 'package:taskio/screens/task_updation.dart';
+import 'package:taskio/utils/colors.dart';
 
 var height;
 var width;
@@ -47,30 +48,31 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
-                backgroundColor: textClr,
+                backgroundColor: AppColor.textfieldbordercolor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
                 minimumSize: const Size(150, 40)),
           ),
           inputDecorationTheme: InputDecorationTheme(
-            floatingLabelStyle: TextStyle(color: textClr),
-            labelStyle: TextStyle(color: textClr, fontSize: 18),
+            floatingLabelStyle: TextStyle(color: AppColor.textfieldbordercolor),
+            labelStyle:
+                TextStyle(color: AppColor.textfieldbordercolor, fontSize: 18),
             contentPadding: const EdgeInsets.only(
               left: 30,
             ),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide()),
-            enabledBorder:
-                OutlineInputBorder(borderSide: BorderSide(color: textClr)),
+            enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: AppColor.textfieldbordercolor)),
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: textClr),
+              borderSide: BorderSide(color: AppColor.textfieldbordercolor),
             ),
           )),
       routes: {
         'addtask': (context) => AddTask(),
-        'taskdetails': (context) => taskdetails(),
+        'taskdetails': (context) => TaskDetails(),
         'bottomNav': (context) => BottomNavigation(),
         'profileEdit': (context) => ProfileEdit(),
         'splash': (context) => SplashScreen(),

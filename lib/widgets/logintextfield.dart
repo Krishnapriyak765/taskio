@@ -23,7 +23,7 @@ class _TextFieldsState extends State<TextFields> {
       child: TextFormField(
         cursorColor: AppColor.textfieldbordercolor,
         controller: widget.textcontroller,
-        autofocus: true,
+        autofocus: false,
         textAlign: TextAlign.start,
         decoration: InputDecoration(
           labelText: widget.labeltxt,
