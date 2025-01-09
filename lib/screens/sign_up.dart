@@ -84,12 +84,13 @@ class SignUp extends StatelessWidget {
                               textcontroller: textPswd),
                           const SizedBoxs(),
                           TextFields(
-                              icon: Icon(
-                                Icons.code,
-                                color: AppColor.textfieldbordercolor,
-                              ),
-                              labeltxt: 'ReferalCode',
-                              textcontroller: textReferralCode),
+                            icon: Icon(
+                              Icons.code,
+                              color: AppColor.textfieldbordercolor,
+                            ),
+                            labeltxt: 'ReferalCode',
+                            textcontroller: textReferralCode,
+                          ),
                           const SizedBoxs(),
                           Buttons(
                             text: 'SIGN UP',

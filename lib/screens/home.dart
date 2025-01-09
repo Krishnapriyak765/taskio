@@ -102,13 +102,6 @@ class HomePage extends StatelessWidget {
                         percentage: 0.75,
                         date: '24-08-2023',
                       ),
-                      // child: TaskCard(
-                      //   taskName: 'Task $index',
-                      //   status: 'In Progress',
-                      //   percentage: 50,
-                      //   assignedBy: 'Sreelekshmi',
-                      //   date: '2023-10-01',
-                      // ),
                     );
                   },
                 ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:taskio/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:taskio/navigation/bottom_navigation.dart';
 import 'package:taskio/screens/account.dart';
 import 'package:taskio/screens/add_task.dart';
@@ -13,11 +15,16 @@ import 'package:taskio/screens/task_updation.dart';
 var height;
 var width;
 
+var currentUserName;
+var currentUserEmail;
+var currentUserPhone;
+
 Color textClr = const Color(0xff4978BA);
 Color textboxClr = const Color(0xffCCCCCC);
 Color greyclr = const Color(0xffDDDDDD);
 
-void main(List<String> args) {
+Future<void> main() async {
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 

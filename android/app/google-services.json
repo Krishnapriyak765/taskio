@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "222933207291",
+    "project_id": "appmatix-73b56",
+    "storage_bucket": "appmatix-73b56.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222933207291:android:e2b3e586dd87c4a086485e",
+        "android_client_info": {
+          "package_name": "com.example.taskio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6HS4pTLFED7l1o7Di9el2MYZsT7OgZTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
