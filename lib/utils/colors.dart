@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColor {
+  static Color appbar = Color(0xff27528E);
   static Color white = Colors.white;
   static Color black = Colors.black;
   static Color textfieldbordercolor = const Color(0xff4978BA);

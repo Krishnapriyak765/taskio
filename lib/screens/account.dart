@@ -43,7 +43,7 @@ class _AccountState extends State<Account> {
                 Row(
                   children: [
                     CircleAvatar(
-                      backgroundColor: AppColor.textboxClr,
+                      backgroundColor:  AppColor.appbar,
                       radius: height * 0.08,
                       backgroundImage: AssetImage('assets/girl.jpg'),
                     ),

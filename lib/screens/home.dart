@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff27528E),
+        backgroundColor: AppColor.appbar,
         leading: Builder(
           builder: (context) => IconButton(
             icon: Icon(Icons.menu, color: AppColor.white),

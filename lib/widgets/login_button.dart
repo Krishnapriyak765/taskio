@@ -14,7 +14,7 @@ class LoginButtons extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       child: Container(
         height: height * 0.05,
-        width: width * 04,
+        width: width * 0.5,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           color: AppColor.textfieldbordercolor,

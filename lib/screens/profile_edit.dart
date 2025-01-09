@@ -27,7 +27,7 @@ class _ProfileEditState extends State<ProfileEdit> {
     return Scaffold(
       // backgroundColor:   textClr,
       appBar: AppBar(
-        backgroundColor: AppColor.textfieldbordercolor,
+        backgroundColor:  AppColor.appbar,
         title: Text(
           'Profile Edit',
           style: TextStyle(color: Colors.white),

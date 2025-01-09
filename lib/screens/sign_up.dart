@@ -14,7 +14,7 @@ class SignUp extends StatelessWidget {
   TextEditingController textName = TextEditingController();
   TextEditingController textEmail = TextEditingController();
   TextEditingController textPswd = TextEditingController();
-  TextEditingController textReferralCode = TextEditingController();
+  TextEditingController textPhone = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +55,7 @@ class SignUp extends StatelessWidget {
                                   text: 'SIGN UP',
                                   fonstsize: height * 0.03,
                                   fontWeight: FontWeight.bold,
-                                  color: AppColor.textfieldbordercolor)
+                                  color: AppColor.textfieldbordercolor),
                             ],
                           ),
                           SizedBox(height: height * 0.05),
@@ -85,11 +85,11 @@ class SignUp extends StatelessWidget {
                           const SizedBoxs(),
                           TextFields(
                               icon: Icon(
-                                Icons.code,
+                                Icons.phone,
                                 color: AppColor.textfieldbordercolor,
                               ),
-                              labeltxt: 'ReferalCode',
-                              textcontroller: textReferralCode),
+                              labeltxt: 'Phone',
+                              textcontroller: textPhone),
                           const SizedBoxs(),
                           LoginButtons(
                             text: 'SIGN UP',

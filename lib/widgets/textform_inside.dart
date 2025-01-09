@@ -30,7 +30,7 @@ class TextformInside extends StatelessWidget {
           style: TextStyle(
               color: AppColor.textfieldbordercolor,
               fontWeight: FontWeight.w500),
-          autofocus: true,
+          autofocus: false,
           textAlign: TextAlign.start,
           decoration: InputDecoration(
             disabledBorder: InputBorder.none,

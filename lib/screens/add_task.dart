@@ -45,7 +45,7 @@ class _AddTaskState extends State<AddTask> {
     String dropdownValue = developers.last;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.textfieldbordercolor,
+        backgroundColor:  AppColor.appbar,
         title:Texts(text: 'Add Task', fonstsize: height*0.025, fontWeight: FontWeight.w600, color: AppColor.white),
       ),
       body: SingleChildScrollView(
